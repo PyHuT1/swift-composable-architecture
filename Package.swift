@@ -38,7 +38,7 @@ let package = Package(
         .product(name: "Dependencies", package: "swift-dependencies"),
         .product(name: "IdentifiedCollections", package: "swift-identified-collections"),
         .product(name: "OrderedCollections", package: "swift-collections"),
-        .product(name: "_SwiftUINavigationState", package: "swiftui-navigation"),
+        .product(name: "SwiftUINavigationCore", package: "swiftui-navigation"),
         .product(name: "XCTestDynamicOverlay", package: "xctest-dynamic-overlay"),
       ]
     ),
