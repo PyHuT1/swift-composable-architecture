@@ -16,7 +16,6 @@ public struct Reduce<State, Action>: ReducerProtocol {
   /// Initializes a reducer with a `reduce` function.
   ///
   /// - Parameter reduce: A function that is called when ``reduce(into:action:)`` is invoked.
-  @inlinable
   public init(_ reduce: @escaping (inout State, Action) -> EffectTask<Action>) {
     self.init(internal: reduce)
   }
@@ -24,13 +23,13 @@ public struct Reduce<State, Action>: ReducerProtocol {
   /// Type-erases a reducer.
   ///
   /// - Parameter reducer: A reducer that is called when ``reduce(into:action:)`` is invoked.
-  @inlinable
+
   public init<R: ReducerProtocol>(_ reducer: R)
   where R.State == State, R.Action == Action {
     self.init(internal: reducer.reduce)
   }
 
-  @inlinable
+
   public func reduce(into state: inout State, action: Action) -> EffectTask<Action> {
     self.reduce(&state, action)
   }
